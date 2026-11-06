@@ -1,0 +1,32 @@
+name = "mub6_triples"
+version = "0.1.0"
+keywords = ["math", "mutually unbiased bases", "complex Hadamard matrices"]
+defaultTargets = ["MUBTriples"]
+
+# Same options as the `hadamard6_formal` package this project depends on.
+[leanOptions]
+pp.unicode.fun = true # pretty-prints `fun a ↦ b`
+autoImplicit = false
+relaxedAutoImplicit = false
+weak.linter.mathlibStandardSet = true
+linter.style.header = false # no per-file copyright boilerplate in this research project
+maxSynthPendingDepth = 3
+
+# Mathlib at the revision used by `hadamard6_formal` at commit 57b0302:
+# tag v4.33.0-rc2 = commit 51e6992efd06126df61a496bebf8f49482a4e129 (pinned in lake-manifest.json).
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "v4.33.0-rc2"
+
+# The Lean development of Cárdenes Wuttig & Tindall, "A complete classification of complex
+# Hadamard matrices of order six" (arXiv:2608.18053). Only `Hadamard6.TaoOrbit` (and its
+# imports) is used: the matrix model `Mat6`, `IsHadamard`, `Equivalent`, `IsTaoOrbit`.
+[[require]]
+name = "hadamard6_formal"
+git = "https://github.com/mateocardeneswuttig/all_hadamard_matrices_in_dimension_six"
+rev = "57b03025ecbe259e474281f49e201ea7cb474e34"
+
+[[lean_lib]]
+name = "MUBTriples"

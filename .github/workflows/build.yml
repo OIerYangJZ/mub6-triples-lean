@@ -1,0 +1,42 @@
+# Build from a fresh checkout and audit the axioms of the main theorems.
+# Mathlib oleans come from the official Mathlib cache (`lake exe cache get`, run by lean-action);
+# hadamard6_formal (7 modules) and MUBTriples are compiled from source. The GitHub cache of
+# `.lake` is disabled so that every run starts from scratch.
+name: Lean build
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build and axiom audit
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Lean, fetch the Mathlib cache, lake build
+        uses: leanprover/lean-action@v1
+        with:
+          auto-config: false
+          build: true
+          test: false
+          lint: false
+          use-mathlib-cache: true
+          use-github-cache: false
+
+      - name: Axiom audit
+        run: |
+          export PATH="$HOME/.elan/bin:$PATH"
+          lake env lean scripts/PrintAxioms.lean | tee axioms.txt
+          test "$(grep -c 'depends on axioms' axioms.txt)" -ge 16
+          if grep -v 'depends on axioms: \[propext, Classical.choice, Quot.sound\]$' axioms.txt; then
+            echo "::error::unexpected axioms or output (see above)"
+            exit 1
+          fi

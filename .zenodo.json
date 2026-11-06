@@ -1,0 +1,39 @@
+{
+  "title": "MUB triples in C^6: a Lean 4 formalization of the classification of Cárdenes Wuttig and Tindall",
+  "upload_type": "software",
+  "description": "<p>Lean 4 / Mathlib formalization of the proof by M. Cárdenes Wuttig and J. Tindall (arXiv:2611.06917) that every triple of mutually unbiased bases in C^6 is equivalent to a member of the continuous two-parameter family or to the isolated Fourier triple, with the computer-assisted certificate facts (phase-ball cover, interval certificates) and the Brierley&ndash;Weigert theorem on Tao's matrix as explicit hypotheses. The algebraic recognition of the symmetric triples and the equality of the ordering score with the paper's formula are proved. The theorem and its proof are due to Cárdenes Wuttig and Tindall.</p>",
+  "creators": [
+    {
+      "name": "TODO, TODO",
+      "affiliation": "TODO"
+    }
+  ],
+  "license": "MIT",
+  "access_right": "open",
+  "version": "0.1.0",
+  "keywords": [
+    "mutually unbiased bases",
+    "complex Hadamard matrices",
+    "Lean 4",
+    "Mathlib",
+    "formal verification"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "arXiv:2611.06917",
+      "relation": "references",
+      "scheme": "arxiv"
+    },
+    {
+      "identifier": "https://github.com/JoeyT1994/NoFourMUBS",
+      "relation": "isDerivedFrom",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://github.com/mateocardeneswuttig/all_hadamard_matrices_in_dimension_six",
+      "relation": "requires",
+      "scheme": "url"
+    }
+  ],
+  "notes": "TODO: AI-use statement."
+}

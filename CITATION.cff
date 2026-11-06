@@ -1,0 +1,56 @@
+cff-version: 1.2.0
+message: >-
+  If you use this formalization, please cite it and the paper whose proof it formalizes
+  (Cárdenes Wuttig and Tindall, arXiv:2611.06917).
+title: "MUB triples in C^6: a Lean 4 formalization of the classification of Cárdenes Wuttig and Tindall"
+type: software
+authors:
+  - family-names: "TODO"
+    given-names: "TODO"
+    affiliation: "TODO"
+    # orcid: "https://orcid.org/TODO"
+repository-code: "https://github.com/TODO-OWNER/TODO-REPO"
+license: MIT
+version: "0.1.0"
+date-released: "TODO-YYYY-MM-DD"
+doi: "TODO-ZENODO-DOI"
+keywords:
+  - mutually unbiased bases
+  - complex Hadamard matrices
+  - Lean 4
+  - Mathlib
+  - formal verification
+references:
+  - type: article
+    title: "Using topology to reveal all mutually unbiased bases in dimension six"
+    authors:
+      - family-names: "Cárdenes Wuttig"
+        given-names: "Mateo"
+      - family-names: "Tindall"
+        given-names: "Joseph"
+    year: 2026
+    identifiers:
+      - type: other
+        value: "arXiv:2611.06917"
+    url: "https://arxiv.org/abs/2611.06917"
+  - type: software
+    title: "NoFourMUBS: proofs, certificates and a Lean formalisation of parts of the proof"
+    authors:
+      - family-names: "Cárdenes Wuttig"
+        given-names: "Mateo"
+      - family-names: "Tindall"
+        given-names: "Joseph"
+    repository-code: "https://github.com/JoeyT1994/NoFourMUBS"
+    license: MIT
+  - type: article
+    title: "A complete classification of complex Hadamard matrices of order six"
+    authors:
+      - family-names: "Cárdenes Wuttig"
+        given-names: "Mateo"
+      - family-names: "Tindall"
+        given-names: "Joseph"
+    year: 2026
+    identifiers:
+      - type: other
+        value: "arXiv:2608.18053"
+    repository-code: "https://github.com/mateocardeneswuttig/all_hadamard_matrices_in_dimension_six"
