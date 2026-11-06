@@ -1,7 +1,6 @@
 # MUB triples in ℂ⁶: a Lean 4 formalization
 
-[![Lean build](https://github.com/TODO-OWNER/TODO-REPO/actions/workflows/build.yml/badge.svg)](https://github.com/TODO-OWNER/TODO-REPO/actions/workflows/build.yml)
-[![DOI](https://zenodo.org/badge/DOI/TODO-ZENODO-DOI.svg)](https://doi.org/TODO-ZENODO-DOI)
+[![Lean build](https://github.com/OIerYangJZ/mub6-triples-lean/actions/workflows/build.yml/badge.svg)](https://github.com/OIerYangJZ/mub6-triples-lean/actions/workflows/build.yml)
 
 > **Attribution.** The theorem and its proof are due to **Mateo Cárdenes Wuttig and Joseph
 > Tindall**, *Using topology to reveal all mutually unbiased bases in dimension six*,
@@ -13,9 +12,9 @@
 > [all_hadamard_matrices_in_dimension_six](https://github.com/mateocardeneswuttig/all_hadamard_matrices_in_dimension_six)
 > (arXiv:2608.18053). Please cite their papers when using this work.
 
-**Formalization authors:** TODO (names). **Affiliations:** TODO.
-**AI-use statement:** TODO.
-**Archived version:** TODO Zenodo DOI.
+**Formalization author:** Jinze Yang (School of Physics, Xidian University).
+**AI-use statement:** This formalization was developed with substantial assistance from AI agents (Anthropic's Claude, used through Claude Code). Every proof is checked by the Lean 4 kernel: the theorems depend only on the standard axioms propext, Classical.choice and Quot.sound, and on the hypotheses stated in this README.
+**Archived version:** Zenodo DOI to be added after the first release.
 
 ## Main statement
 

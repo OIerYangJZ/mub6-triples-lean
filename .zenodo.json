@@ -4,8 +4,8 @@
   "description": "<p>Lean 4 / Mathlib formalization of the proof by M. Cárdenes Wuttig and J. Tindall (arXiv:2611.06917) that every triple of mutually unbiased bases in C^6 is equivalent to a member of the continuous two-parameter family or to the isolated Fourier triple, with the computer-assisted certificate facts (phase-ball cover, interval certificates) and the Brierley&ndash;Weigert theorem on Tao's matrix as explicit hypotheses. The algebraic recognition of the symmetric triples and the equality of the ordering score with the paper's formula are proved. The theorem and its proof are due to Cárdenes Wuttig and Tindall.</p>",
   "creators": [
     {
-      "name": "TODO, TODO",
-      "affiliation": "TODO"
+      "name": "Yang, Jinze",
+      "affiliation": "School of Physics, Xidian University"
     }
   ],
   "license": "MIT",
@@ -35,5 +35,5 @@
       "scheme": "url"
     }
   ],
-  "notes": "TODO: AI-use statement."
+  "notes": "This formalization was developed with substantial assistance from AI agents (Anthropic's Claude, used through Claude Code). Every proof is checked by the Lean 4 kernel: the theorems depend only on the standard axioms propext, Classical.choice and Quot.sound, and on the hypotheses stated in this README."
 }

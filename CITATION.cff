@@ -5,15 +5,13 @@ message: >-
 title: "MUB triples in C^6: a Lean 4 formalization of the classification of Cárdenes Wuttig and Tindall"
 type: software
 authors:
-  - family-names: "TODO"
-    given-names: "TODO"
-    affiliation: "TODO"
-    # orcid: "https://orcid.org/TODO"
-repository-code: "https://github.com/TODO-OWNER/TODO-REPO"
+  - family-names: "Yang"
+    given-names: "Jinze"
+    affiliation: "School of Physics, Xidian University"
+repository-code: "https://github.com/OIerYangJZ/mub6-triples-lean"
 license: MIT
 version: "0.1.0"
-date-released: "TODO-YYYY-MM-DD"
-doi: "TODO-ZENODO-DOI"
+date-released: "2026-11-06"
 keywords:
   - mutually unbiased bases
   - complex Hadamard matrices
