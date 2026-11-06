@@ -21,6 +21,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Free disk space (the Mathlib cache needs several GB)
+        uses: jlumbroso/free-disk-space@main
+        with:
+          tool-cache: false
+
       - name: Install Lean, fetch the Mathlib cache, lake build
         uses: leanprover/lean-action@v1
         with:
