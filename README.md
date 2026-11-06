@@ -1,6 +1,7 @@
 # MUB triples in ℂ⁶: a Lean 4 formalization
 
 [![Lean build](https://github.com/OIerYangJZ/mub6-triples-lean/actions/workflows/build.yml/badge.svg)](https://github.com/OIerYangJZ/mub6-triples-lean/actions/workflows/build.yml)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23993900.svg)](https://doi.org/10.5281/zenodo.23993900)
 
 > **Attribution.** The theorem and its proof are due to **Mateo Cárdenes Wuttig and Joseph
 > Tindall**, *Using topology to reveal all mutually unbiased bases in dimension six*,
@@ -14,7 +15,7 @@
 
 **Formalization author:** Jinze Yang (School of Physics, Xidian University).
 **AI-use statement:** This formalization was completed jointly by the author and Claude Opus 5.5 (Anthropic).
-**Archived version:** Zenodo DOI to be added after the first release.
+**Archived version:** [doi:10.5281/zenodo.23993901](https://doi.org/10.5281/zenodo.23993901) (v0.1.0); all versions: [doi:10.5281/zenodo.23993900](https://doi.org/10.5281/zenodo.23993900).
 
 ## Main statement
 
