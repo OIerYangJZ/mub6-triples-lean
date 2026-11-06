@@ -13,7 +13,7 @@
 > (arXiv:2608.18053). Please cite their papers when using this work.
 
 **Formalization author:** Jinze Yang (School of Physics, Xidian University).
-**AI-use statement:** This formalization was developed with substantial assistance from AI agents (Anthropic's Claude, used through Claude Code). Every proof is checked by the Lean 4 kernel: the theorems depend only on the standard axioms propext, Classical.choice and Quot.sound, and on the hypotheses stated in this README.
+**AI-use statement:** This formalization was completed jointly by the author and Claude Opus 5.5 (Anthropic).
 **Archived version:** Zenodo DOI to be added after the first release.
 
 ## Main statement
