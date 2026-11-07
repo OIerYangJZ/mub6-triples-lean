@@ -49,6 +49,26 @@ The objects in the statement:
 * `isolatedTriple`: `{I₆, F̂₂ ⊗ F̂₃, [diag(1, i) F̂₂] ⊗ [diag(1, ω², ω²) F̂₃]}` (Methods
   Eq. `methods-isolated-triple-bases`).
 
+The same statement with the paper's explicit seed parametrization, and with an *exclusive* "or"
+(`MUBTriples/Inequivalence.lean`):
+
+```lean
+theorem MUBTriples.mubTriple_seedClassification {ι : Type} {piece : ι → Set Mat6}
+    {ordering : ι → Prop} (C : TripleCertificate piece ordering) : SeedClassification
+
+def MUBTriples.SeedClassification : Prop :=
+  ∀ U : Triple, IsMUBTriple U → Xor (IsSeedClass U) (TripleEquiv U isolatedTriple)
+-- IsSeedClass U : ∃ θ₁ θ₂ ℓ ρ ε, InDomain θ₁ θ₂ ℓ ∧ IsRootTriple (seedσ θ₁ θ₂ ℓ) ρ ∧
+--                   TripleEquiv U (seedTriple θ₁ θ₂ ℓ ρ ε)
+```
+
+Here `seedTriple θ₁ θ₂ ℓ ρ ε` is the construction of SM §"Seeds of all mutually unbiased triples"
+(`MUBTriples/Seeds.lean`): `β, γ, σ` from `(θ₁, θ₂, ℓ)`, the domain
+`|σ|⁴ + 18|σ|² + 8 Re(σ³) − 27 ≤ 0`, an ordering `ρ` of the roots of `t³ + σt² − σ̄t − 1`, the
+circulants `A`, `B`, the diagonal factors `D, R, S` with signs `ε`, substituted into Methods
+Eq. `methods-explicit-continuous-bases`. `tripleClassification_iff_seedClassification` shows that
+this is equivalent to `TripleClassification`.
+
 Corollary (`MUBTriples.no_four_mubs`): under (H1)–(H3) and the theorem of Jaming, Matolcsi, Móra,
 Szöllősi and Weiner (J. Phys. A 42, 245305, 2009) that no pair `{I₆, H/√6}` with `H` in the
 transposed Fourier family extends to four MUBs (hypothesis `NoQuartetThroughFourierFamily`),
@@ -96,6 +116,27 @@ so (H2) may equivalently be stated with the literal formula (`classified_of_pape
 * `Contraction.symmetry_criterion`: SM Eq. `tc-symmetry`, abstractly over real normed spaces.
 * Sanity checks: the isolated triple is a MUB triple; a family block form is a MUB triple iff two
   circulants are flat; both types carry the order-three symmetry.
+* **The seed parametrization** (`MUBTriples/Seeds.lean`, SM §"Seeds of all mutually unbiased
+  triples"). `seedTriple_spec`: for `(θ₁, θ₂, ℓ)` in the domain, every ordering of the roots and
+  all signs, the roots have unit modulus, `λₖ μₖ ≠ 0`, `D, R, S` are unit diagonals, the triple
+  is a MUB triple of the family form (`seedTriple_isFamilyMember`), its transition is
+  `√6 U₂† U₃ = [[A, B], [B†, −A†]]`, and that matrix is complex Hadamard. The cubic step is
+  proved, not assumed: the domain polynomial is the discriminant of the cubic
+  (`domainPoly_eq_disc`), and it is `≤ 0` iff all roots are unimodular (`domainPoly_nonpos_iff`).
+  `inDomain_iff`: the domain is exactly the set of parameters for which some circulant `B` makes
+  `[[A, B], [B†, −A†]]` Hadamard. The specified seeds of the corners (`seedOf_seedTriple_corner`,
+  `seedOf_corner142`, and `seedOf_isolatedTriple` for the isolated triple) are checked.
+  Conversely every `IsFamilyMember` triple is equivalent to a seed triple
+  (`familyMember_tripleEquiv_seedTriple`, `exists_familyMember_iff_seed`). Non-vacuity:
+  `(2π/3, −2π/3, 1)` gives `σ = 0` and lies in the domain (`seedσ_center`), so family members
+  exist (`exists_familyMember`).
+* **The isolated triple is not equivalent to any family member**
+  (`not_tripleEquiv_isolatedTriple_of_familyMember`, `MUBTriples/Inequivalence.lean`), so the two
+  alternatives of the classification are exclusive (`family_and_isolated_exclusive`). The proof
+  uses the invariant `Σ_{e,f,g} (⟨e|f⟩⟨f|g⟩⟨g|e⟩)⁴` over the 216 three-vertex (Bargmann) products,
+  which equivalence preserves or conjugates; every family member is equivalent to its own complex
+  conjugate with the bases fixed, so its invariant is real, while the isolated triple's is
+  `−2592 (1 + 2ω)/6⁸ = −2592·√3 i/6⁸`. (This replaces the paper's Jacobian-rank argument.)
 * Invariance of `Γ_F` under equivalence, conjugation, transpose and adjoint, and its equality
   with the paper's formula.
 
@@ -111,10 +152,10 @@ from unbiasedness rather than assumed.
    certificates and the Fourier-chart crossings, and Brierley–Weigert's theorem on Tao's matrix.
    In particular the link between the paper's 72/96-variable phase equations `F` and the affine
    action on one side and `HasOrder3Symmetry` on the other is part of (H2).
-2. The two-parameter seed parametrization of `D, R, S` (SM §"Seeds of all mutually unbiased
-   triples": cubic `t³ + σt² − σ̄t − 1`, domain inequality) and its identification with
-   `IsFamilyMember`; the dimension count of the family; the non-equivalence of the isolated
-   triple to family members. Here a family member is *any* MUB triple of the explicit block form.
+2. The two-parameter dimension count of the family (that it is genuinely two-dimensional up to
+   equivalence), and the "isolated" statement in the topological sense (the paper's Jacobian
+   rank 55). The seed parametrization, its identification with `IsFamilyMember` and the
+   non-equivalence of the isolated triple to all family members *are* formalized (see above).
 3. Items 1–2 of Theorem `all-mubs` (single bases and pairs, via `H₊(θ)`).
 4. The quartet theorem of Jaming et al. (2009), assumed in `no_four_mubs`.
 
@@ -127,7 +168,7 @@ Requirements: [elan](https://github.com/leanprover/elan) (it installs the toolch
 
 ```sh
 lake exe cache get     # download prebuilt Mathlib (pinned in lake-manifest.json)
-lake build             # builds the 7 needed modules of hadamard6_formal and the 16 MUBTriples modules
+lake build             # builds the 7 needed modules of hadamard6_formal and the 18 MUBTriples modules
 lake env lean scripts/PrintAxioms.lean   # axiom audit of the main theorems
 ```
 
@@ -151,6 +192,11 @@ a closed local port). `lake build` finished successfully (8,722 jobs; Mathlib up
 `Hadamard6` modules and 16 `MUBTriples` modules compiled), and `scripts/PrintAxioms.lean` printed
 only `propext, Classical.choice, Quot.sound`.
 
+**Local verification record (2026-11-07, branch `param`).** Same setup; after adding
+`MUBTriples/Seeds.lean` and `MUBTriples/Inequivalence.lean`, `lake build` finished successfully
+(8,724 jobs, 18 `MUBTriples` modules) and `scripts/PrintAxioms.lean` printed only
+`propext, Classical.choice, Quot.sound` for all 39 listed theorems.
+
 **Continuous integration.** `.github/workflows/build.yml` builds from a fresh checkout with
 [`leanprover/lean-action`](https://github.com/leanprover/lean-action) (Mathlib from the official
 cache, no GitHub cache of `.lake`) and runs the axiom audit. It has **not** been run yet (it
@@ -168,6 +214,8 @@ cannot be run locally).
 | `MUBTriples/Contraction.lean` | the symmetry criterion (SM Eq. `tc-symmetry`) |
 | `MUBTriples/Recognition/` | algebraic recognition of the symmetric triples |
 | `MUBTriples/MainTheorem.lean` | `mubTriple_classification`, `no_four_mubs` |
+| `MUBTriples/Seeds.lean` | the `(θ₁, θ₂)` seed construction, the cubic and the domain, identification with `IsFamilyMember` |
+| `MUBTriples/Inequivalence.lean` | the Bargmann invariant, non-equivalence of the isolated triple, seed form of the classification |
 | `scripts/PrintAxioms.lean` | axiom audit |
 
 ## License and citation

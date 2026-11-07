@@ -19,9 +19,10 @@ All bases are written as `H/√6` with an unnormalized matrix `H`, using
 with diagonal unitaries `D, R, S`.  The paper gives `D, R, S` as explicit
 functions of two seed coordinates (SM §"Seeds of all mutually unbiased
 triples").  **Here a family member is any MUB triple of this explicit block
-form with arbitrary unit diagonals `D, R, S`** (`IsFamilyMember`); the
-identification of this set with the image of the paper's `(θ₁, θ₂)`
-parametrization is *not* formalized (see `STATUS.md`).
+form with arbitrary unit diagonals `D, R, S`** (`IsFamilyMember`); its
+identification, up to equivalence, with the image of the paper's `(θ₁, θ₂)`
+parametrization is proved in `MUBTriples/Seeds.lean` (`seedTriple_isFamilyMember`,
+`familyMember_tripleEquiv_seedTriple`, `exists_familyMember_iff_seed`).
 
 ## The isolated Fourier triple (Methods Eq. `methods-isolated-triple-bases`)
 

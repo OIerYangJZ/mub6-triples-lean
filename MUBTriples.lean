@@ -14,3 +14,5 @@ import MUBTriples.Recognition.Anchor
 import MUBTriples.Recognition.Main
 import MUBTriples.Recognition.Isolated
 import MUBTriples.MainTheorem
+import MUBTriples.Seeds
+import MUBTriples.Inequivalence

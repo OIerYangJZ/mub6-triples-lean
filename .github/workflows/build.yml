@@ -40,7 +40,7 @@ jobs:
         run: |
           export PATH="$HOME/.elan/bin:$PATH"
           lake env lean scripts/PrintAxioms.lean | tee axioms.txt
-          test "$(grep -c 'depends on axioms' axioms.txt)" -ge 16
+          test "$(grep -c 'depends on axioms' axioms.txt)" -ge 39
           if grep -v 'depends on axioms: \[propext, Classical.choice, Quot.sound\]$' axioms.txt; then
             echo "::error::unexpected axioms or output (see above)"
             exit 1
