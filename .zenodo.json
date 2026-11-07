@@ -1,7 +1,7 @@
 {
   "title": "MUB triples in C^6: a Lean 4 formalization of the classification of Cárdenes Wuttig and Tindall",
   "upload_type": "software",
-  "description": "<p>Lean 4 / Mathlib formalization of the proof by M. Cárdenes Wuttig and J. Tindall (arXiv:2611.06917) that every triple of mutually unbiased bases in C^6 is equivalent to a member of the continuous two-parameter family or to the isolated Fourier triple, with the computer-assisted certificate facts (phase-ball cover, interval certificates) and the Brierley&ndash;Weigert theorem on Tao's matrix as explicit hypotheses. The algebraic recognition of the symmetric triples and the equality of the ordering score with the paper's formula are proved. The theorem and its proof are due to Cárdenes Wuttig and Tindall.</p>",
+  "description": "<p>Lean 4 / Mathlib formalization of the proof by M. Cárdenes Wuttig and J. Tindall (arXiv:2611.06917) that every triple of mutually unbiased bases in C^6 is equivalent to a member of the continuous two-parameter family or to the isolated Fourier triple, with the computer-assisted certificate facts (phase-ball cover, interval certificates) and the Brierley&ndash;Weigert theorem on Tao's matrix as explicit hypotheses. The algebraic recognition of the symmetric triples and the equality of the ordering score with the paper's formula are proved. Since v0.2.0 the paper's explicit seed parametrization of the two-parameter family is formalized (the construction from (&theta;<sub>1</sub>, &theta;<sub>2</sub>), the cubic and its domain, and the converse identification of every family member with a seed triple), together with the non-equivalence of the isolated triple to every family member, so that the classification holds with an exclusive &ldquo;or&rdquo;. The theorem and its proof are due to Cárdenes Wuttig and Tindall.</p>",
   "creators": [
     {
       "name": "Yang, Jinze",
@@ -10,7 +10,7 @@
   ],
   "license": "MIT",
   "access_right": "open",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "keywords": [
     "mutually unbiased bases",
     "complex Hadamard matrices",

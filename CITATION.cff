@@ -10,8 +10,8 @@ authors:
     affiliation: "School of Physics, Xidian University"
 repository-code: "https://github.com/OIerYangJZ/mub6-triples-lean"
 license: MIT
-version: "0.1.0"
-date-released: "2026-11-06"
+version: "0.2.0"
+date-released: "2026-11-07"
 doi: "10.5281/zenodo.23993900"
 keywords:
   - mutually unbiased bases

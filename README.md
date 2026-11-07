@@ -15,7 +15,7 @@
 
 **Formalization author:** Jinze Yang (School of Physics, Xidian University).
 **AI-use statement:** This formalization was completed jointly by the author and Claude Opus 5.5 (Anthropic).
-**Archived version:** [doi:10.5281/zenodo.23993901](https://doi.org/10.5281/zenodo.23993901) (v0.1.0); all versions: [doi:10.5281/zenodo.23993900](https://doi.org/10.5281/zenodo.23993900).
+**Archived versions:** [doi:10.5281/zenodo.24026452](https://doi.org/10.5281/zenodo.24026452) (v0.2.0), [doi:10.5281/zenodo.23993901](https://doi.org/10.5281/zenodo.23993901) (v0.1.0); all versions: [doi:10.5281/zenodo.23993900](https://doi.org/10.5281/zenodo.23993900).
 
 ## Main statement
 
